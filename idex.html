@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja de Roupa Jeito de Menina</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #FAF3ED;
+            font-family: Arial, sans-serif;
+            color: #51443E;
+            line-height: 1.6;
+        }
+
+        header {
+            text-align: center;
+            padding: 25px 15px;
+        }
+
+        header img {
+            width: 200px;
+            max-width: 100%;
+            margin-bottom: 10px;
+        }
+
+        header h1 {
+            color: #875D52;
+            margin-bottom: 5px;
+        }
+
+        header p {
+            color: #806F66;
+        }
+
+        .hotbar {
+            background: #A4776B;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .hotbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        .hotbar a:hover {
+            color: #FBE6DD;
+            text-decoration: underline;
+        }
+
+        main {
+            max-width: 1000px;
+            margin: auto;
+            padding: 30px 20px;
+        }
+
+        section {
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #875D52;
+            margin-bottom: 20px;
+        }
+
+        .banner {
+            background: #FFFDFC;
+            padding: 30px 20px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px #0000000D;
+        }
+
+        .produtos {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .produto {
+            background: #FFFFFF;
+            padding: 15px;
+            border: 1px solid #F0E3DC;
+            border-radius: 12px;
+            width: 220px;
+            box-shadow: 0 3px 8px #0000000D;
+            transition: transform 0.2s;
+        }
+
+        .produto:hover {
+            transform: translateY(-4px);
+        }
+
+        .produto img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .produto h3 {
+            color: #625048;
+            margin: 10px 0;
+            font-size: 17px;
+        }
+
+        .preco {
+            color: #8A6B4F;
+            font-size: 20px;
+            font-weight: bold;
+            margin: 12px 0;
+        }
+
+        button {
+            background: #A4776B;
+            color: white;
+            border: none;
+            padding: 10px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background 0.2s;
+        }
+
+        button:hover {
+            background: #875D52;
+        }
+
+        .contato,
+        .formulario {
+            background: #FFFDFC;
+            padding: 25px;
+            border: 1px solid #F0E3DC;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px #0000000D;
+        }
+
+        .contato p {
+            margin: 12px 0;
+        }
+
+        .contato a {
+            color: #95685B;
+            font-weight: bold;
+        }
+
+        .campo {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        .campo label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #625048;
+        }
+
+        .campo input,
+        .campo select {
+            width: 100%;
+            padding: 11px;
+            border: 1px solid #DDC9BE;
+            border-radius: 6px;
+            font-size: 14px;
+            background: #FFFFFF;
+            color: #51443E;
+        }
+
+        .campo input:focus,
+        .campo select:focus {
+            outline: 1px solid #A4776B;
+            border-color: #A4776B;
+        }
+
+        #mensagem {
+            display: none;
+            margin-top: 15px;
+            padding: 12px;
+            border-radius: 6px;
+        }
+
+        footer {
+            background: #A4776B;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        @media (max-width: 600px) {
+            .hotbar a {
+                display: inline-block;
+                margin: 5px 8px;
+            }
+
+            main {
+                padding: 20px 12px;
+            }
+
+            .produto {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+       
+        <h1>Jeito de Menina</h1>
+        <p>Moda e estilo para você!</p>
+    </header>
+
+    <nav class="hotbar">
+        <a href="#inicio">Início</a>
+        <a href="#opcoes">Opções</a>
+        <a href="#contato">Contato</a>
+    </nav>
+
+    <main>
+
+        <section id="inicio" class="banner">
+            <h2>Bem-vindo à nossa loja!</h2>
+            <p>Encontre looks variados e peças que combinam com você.</p>
+            <br>
+            <button onclick="mostrarPromocao()">Ver promoção</button>
+        </section>
+
+        <section id="opcoes">
+            <h2>Nossas opções</h2>
+
+            <div class="produtos">
+
+                <div class="produto">
+                    <img src="https://cherrymodas.com/cdn/shop/files/176044384659ce21241abe5904bda41c024bc78ef9_thumbnail.webp?v=1776870943&width=832" alt="Vestido feminino">
+                    <h3>Vestido feminino</h3>
+                    <div class="preco">R$ 129,90</div>
+                    <button onclick="comprar('Vestido feminino')">Comprar</button>
+                </div>
+
+                <div class="produto">
+                    <img src="https://acdn-us.mitiendanube.com/stores/007/002/445/products/macacao-alfaiataria-itgel-camel_1_-df54720ba93e33bbbe17696912989215-1024-1024.webp" alt="Macacão de alfaiataria">
+                    <h3>Macacão de alfaiataria</h3>
+                    <div class="preco">R$ 189,90</div>
+                    <button onclick="comprar('Macacão de alfaiataria')">Comprar</button>
+                </div>
+
+                <div class="produto">
+                    <img src="https://triangulo.cdn.magazord.com.br/img/2025/08/produto/8407/blazer-alfaiataria-cinza-grafite-tamara-camisa-off-white-daisy-meio-corpo.jpg?ims=425x635" alt="Blazer feminino">
+                    <h3>Blazer feminino</h3>
+                    <div class="preco">R$ 159,90</div>
+                    <button onclick="comprar('Blazer feminino')">Comprar</button>
+                </div>
+
+                <div class="produto">
+                    <img src="https://brooksfielddonna.vtexassets.com/arquivos/ids/312292-276-412/32c83d26-9830-413b-8c55-0699ce35e5fe.jpg?v=639208810519970000" alt="Look feminino">
+                    <h3>Look feminino</h3>
+                    <div class="preco">R$ 99,90</div>
+                    <button onclick="comprar('Look feminino')">Comprar</button>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="contato">
+            <h2>Contato</h2>
+
+            <div class="contato">
+                <p>
+                    <strong>Endereço:</strong>
+                    Rua 4 de Dezembro de 2011, Bairro 6 - Belo Horizonte
+                </p>
+
+                <p>
+                    <strong>Telefone:</strong>
+                    <a href="https://w.app/restauranterangodaksa" target="_blank">
+                        Entre em contato
+                    </a>
+                </p>
+
+                <p>
+                    <strong>Email:</strong>
+                    <a href="mailto:contato@jeitodemenina.com">
+                        contato@jeitodemenina.com
+                    </a>
+                </p>
+            </div>
+        </section>
+
+        <section class="formulario">
+            <h2>Entre em contato</h2>
+
+            <form onsubmit="enviarFormulario(event)">
+                <div class="campo">
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" placeholder="Digite seu nome">
+                </div>
+
+                <div class="campo">
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" placeholder="Digite seu e-mail">
+                </div>
+
+                <div class="campo">
+                    <label for="assunto">Assunto:</label>
+                    <select id="assunto">
+                        <option value="">Selecione</option>
+                        <option value="duvida">Dúvida</option>
+                        <option value="produto">Produto</option>
+                        <option value="promocao">Promoção</option>
+                    </select>
+                </div>
+
+                <button type="submit">Enviar mensagem</button>
+            </form>
+
+            <div id="mensagem"></div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Jeito de Menina © 2026</p>
+        <p>Página desenvolvida para fins educacionais</p>
+    </footer>
+
+    <script>
+        function mostrarPromocao() {
+            alert("Promoção especial! Todos os produtos estão com 10% de desconto hoje.");
+        }
+
+        function comprar(produto) {
+            let confirmacao = confirm("Deseja comprar o produto: " + produto + "?");
+
+            if (confirmacao) {
+                alert("Produto " + produto + " adicionado ao carrinho!");
+            }
+        }
+
+        function enviarFormulario(event) {
+            event.preventDefault();
+
+            let nome = document.getElementById("nome").value;
+            let email = document.getElementById("email").value;
+            let assunto = document.getElementById("assunto").value;
+            let mensagem = document.getElementById("mensagem");
+
+            mensagem.style.display = "block";
+
+            if (nome === "" || email === "" || assunto === "") {
+                mensagem.style.backgroundColor = "#F8D7DA";
+                mensagem.style.color = "#842029";
+                mensagem.innerHTML = "Preencha todos os campos.";
+                return;
+            }
+
+            mensagem.style.backgroundColor = "#DDEBDD";
+            mensagem.style.color = "#315C3B";
+            mensagem.innerHTML = "Obrigado, " + nome + "! Sua mensagem foi enviada.";
+        }
+    </script>
+
+</body>
+</html>
